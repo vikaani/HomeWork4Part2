@@ -39,16 +39,29 @@ class CartViewController: UIViewController {
         case 0:
             selectedCurrency = .uah
         case 1:
-            selectedCurrency = .uah
+            selectedCurrency = .usd
         case 2:
-            selectedCurrency = .uah
+            selectedCurrency = .eur
         default:
             break
         }
+        
         showChanges()
     }
     
     @IBAction func discountSegmentAction(_ segmentControl: UISegmentedControl) {
+        let selectedIndex = segmentControl.selectedSegmentIndex
+        switch selectedIndex {
+        case 0:
+            discount = .none
+        case 1:
+            discount = .regular
+        case 2:
+            discount = .vip
+        default:
+            break
+        }
+        
         showChanges()
     }
     
